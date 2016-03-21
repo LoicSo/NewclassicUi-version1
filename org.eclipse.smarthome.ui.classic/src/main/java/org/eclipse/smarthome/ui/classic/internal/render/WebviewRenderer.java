@@ -19,6 +19,7 @@ import org.eclipse.smarthome.ui.classic.render.RenderException;
 import org.eclipse.smarthome.ui.classic.render.WidgetRenderer;
 import org.eclipse.smarthome.ui.classic.rest.render.RestRenderer;
 import org.eclipse.smarthome.ui.classic.rest.render.UrlBuilder;
+import org.eclipse.smarthome.ui.classic.rest.render.htmlBuilder;
 
 /**
  * This is an implementation of the {@link WidgetRenderer} interface, which
@@ -46,6 +47,8 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
 
         Webview webview = (Webview) w;
         String snippet = getSnippet("webview");
+        htmlBuilder html = new htmlBuilder("http://localhost:8080/classicui/WebApp/index.html");
+        System.err.println("html de depart " + html.getHtml());
 
         System.err.println("snippet de depart " + snippet);
         int height = webview.getHeight();

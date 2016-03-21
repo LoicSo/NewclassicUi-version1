@@ -51,11 +51,12 @@ public class UrlBuilder {
                 TiltUrl = temp.get("tilt_url").replaceFirst("IPADDRESS", this.ipaddress);
                 registered = true;
 
-            } else if (!isRegistered()) {
-                System.err.println("The camera model " + modelcam + " is not listed in the properties file"
-                        + "\n please add the camera configurations in the camera.properties file \n");
-
             }
+
+        }
+        if (!isRegistered()) {
+            System.err.println("The camera model " + modelcam + " is not listed in the properties file"
+                    + "\n please add the camera configurations in the camera.properties file \n");
 
         }
 
