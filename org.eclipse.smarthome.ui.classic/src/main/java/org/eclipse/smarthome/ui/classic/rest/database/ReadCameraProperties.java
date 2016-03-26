@@ -1,4 +1,4 @@
-package org.openhab.binding.upnpcamera.database;
+package org.eclipse.smarthome.ui.classic.rest.database;
 
 import java.io.IOException;
 import java.util.ArrayList;

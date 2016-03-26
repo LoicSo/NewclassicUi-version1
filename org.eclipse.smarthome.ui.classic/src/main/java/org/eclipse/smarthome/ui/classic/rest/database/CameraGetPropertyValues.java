@@ -1,4 +1,4 @@
-package org.openhab.binding.upnpcamera.database;
+package org.eclipse.smarthome.ui.classic.rest.database;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class CameraGetPropertyValues {
 
                 if (!list.contains(cameraInfo)) {
                     list.add(cameraInfo);
-                    
+
                 }
                 // camera_name = temp.concat(strArray[1]);
 

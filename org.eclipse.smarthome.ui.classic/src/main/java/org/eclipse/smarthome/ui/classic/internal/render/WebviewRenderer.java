@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import org.apache.commons.lang.StringUtils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.smarthome.model.sitemap.Webview;
 import org.eclipse.smarthome.model.sitemap.Widget;
@@ -47,8 +46,7 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
 
         Webview webview = (Webview) w;
         String snippet = getSnippet("webview");
-        htmlBuilder html = new htmlBuilder("http://localhost:8080/classicui/WebApp/index.html");
-        System.err.println("html de depart " + html.getHtml());
+        htmlBuilder html = new htmlBuilder(snippet);
 
         System.err.println("snippet de depart " + snippet);
         int height = webview.getHeight();
@@ -56,9 +54,8 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
             height = 1;
         }
 
-        snippet = StringUtils.replace(snippet, "%url%", webview.getUrl());
-        snippet = StringUtils.replace(snippet, "%height%", Integer.toString(height * 36));
-        sb.append(snippet);
+        // snippet = StringUtils.replace(snippet, "%url%", webview.getUrl());
+        // snippet = StringUtils.replace(snippet, "%height%", Integer.toString(height * 36));
 
         try {
 
@@ -73,16 +70,17 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
 
                 u.BuildUrls();
                 if (u.isRegistered()) {
+                    html.addCamera(temp.get("name"), u.getImageUrl(), u.getStreamUrl());
                     System.out.println("image_URL: " + u.getImageUrl() + "\n stream_url: " + u.getStreamUrl()
                             + "\n pan_url: " + u.getPanUrl() + "\n tilt_url: " + u.getTiltUrl());
                 }
             }
-
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
+        snippet = html.getHtml();
+        sb.append(snippet);
         return null;
     }
 
