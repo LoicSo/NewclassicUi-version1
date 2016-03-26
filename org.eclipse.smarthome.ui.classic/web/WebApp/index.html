@@ -11,6 +11,43 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 		<link rel="stylesheet" href="webview.css" />
+		<script>
+	    function $_GET(param) {
+		    var vars = {};
+		    window.location.href.replace( location.hash, '' ).replace(
+		        /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		        function( m, key, value ) { // callback
+		            vars[key] = value !== undefined ? value : '';
+		        }
+		    );
+		
+		    if ( param ) {
+		        return vars[param] ? vars[param] : null;
+		    }
+		    return vars;
+	    }
+	    var $_GET = $_GET();
+	    var nomCam1=$_GET['camera1Nom'];
+	    var urlCam1Img=$_GET['camera1Img'];
+	    var urlCam1Video=$_GET['camera1Video'];
+	    
+        var nomCam2=$_GET['camera2Nom'];
+        var urlCam2Img=$_GET['camera2Img'];
+        var urlCam2Video=$_GET['camera2Video'];
+        
+        var nomCam3=$_GET['camera3Nom'];
+        var urlCam3Img=$_GET['camera3Img'];
+        var urlCam3Video=$_GET['camera3Video'];
+        
+        var nomCam4=$_GET['camera4Nom'];
+        var urlCam4Img=$_GET['camera4Img'];
+        var urlCam4Video=$_GET['camera4Video'];
+        
+
+
+ // var  name = $_GET['name'];
+   // var  prenom = $_GET['prenom'];
+</script>
 	</head>
 	<body>
 
@@ -37,15 +74,43 @@
 			</p>
 			<!--  List of the cameras -->
 						<ul style="list-style-type:square">
-			  <li><footer>
-					<a href="#first" class="button style2 scrolly">Camera 1</a>
-				</footer></li>
-				<footer>
-					<a href="#first" class="button style2 scrolly">Camera 2</a>
-				</footer></li>
-				<footer>
-					<a href="#first" class="button style2 scrolly">Camera 3</a>
-				</footer></li>
+						<li>
+					    <script>
+						var n = nomCam1.localeCompare("%camera1Nom");
+						if(n!=0){
+						    document.writeln(
+						          "<footer><a href=\""+urlCam1Video+"\"  class=\"button style2 scrolly\">"+nomCam1+"</a></footer></li>"  
+						    );
+						}
+					    </script>
+					    
+                       <script>
+                        var n = nomCam2.localeCompare("%camera2Nom");
+                        if(n!=0){
+                            document.writeln(
+                                  "<footer><a href=\"#\"  class=\"button style2 scrolly\">"+nomCam2+"</a></footer></li>"  
+                            );
+                        }
+                        </script>
+                        
+                        <script>
+                        var n = nomCam3.localeCompare("%camera3Nom");
+                        if(n!=0){
+                            document.writeln(
+                                  "<footer><a href=\"#\"  class=\"button style2 scrolly\">"+nomCam3+"</a></footer></li>"  
+                            );
+                        }
+                        </script>
+                        
+                        <script>
+                        var n = nomCam4.localeCompare("%camera4Nom");
+                        if(n!=0){
+                            document.writeln(
+                                  "<footer><a href=\"#\"  class=\"button style2 scrolly\">"+nomCam3+"</a></footer></li>"  
+                            );
+                        }
+                        </script>
+
 				<br />
 
 <p style="text-align:left">
@@ -59,47 +124,53 @@
 			<article class="container box style2">
 				<header>
 					<h2>Video Mosaic</h2>
-					<p>The mosaic can only show the 8 first discovered cameras.
+					<p>The mosaic can only show the 4 first discovered cameras.
 					<br/>Each quadrant shows a still image of the stream and is a link to the main control page of the stream </p>
 				</header>
-				<div class="inner gallery">
-					<div class="row 0%">
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/01.jpg" alt="no more camera" title="Camera 1" /></a></div>
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/02.jpg" alt="no more camera" title="Camera 2" /></a></div>
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/03.jpg" alt="no more camera" title="Camera 3" /></a></div>
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/04.jpg" alt="no more camera" title="Camera 4" /></a></div>
-					</div>
-					<div class="row 0%">
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/05.jpg" alt="no more camera" title="Camera 5" /></a></div>
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/06.jpg" alt="no more camera" title="Camera 6" /></a></div>
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/07.jpg" alt="no more camera" title="Camera 7" /></a></div>
-						<div class="3u 12u(mobile)"><a href="link_to_camera_control" class="image fit"><img src="images/thumbs/08.jpg" alt="no more camera" title="Camera 8" /></a></div>
-					</div>
+				<div class="mosaique">
+
+						<script type="text/javascript">
+						//document.writeln("<div class=\"3u 12u(mobile)\"><a href=\""+urlCam1Video+"\"  class=\"image fit\"><img src=\""+urlCam1Img+"\" alt=\"no more camera\" title=\"Camera 1\" /></a></div>"        
+						);
+						</script>
+						
+                        <script type="text/javascript">
+                        var desc=nomCam1;
+                        var n = nomCam1.localeCompare("%camera1Nom");
+                        if(n!=0){
+	                        document.writeln("<div class=\"img1\"><a  href=\""+urlCam1Video+"\"><img src=\""+urlCam1Img+"\" alt=\""+nomCam1+"\" width=\"300\" height=\"200\"></a><div class=\"desc\">"+desc+"</div></div>"
+	                        ); 
+                        }
+                        var n = nomCam2.localeCompare("%camera2Nom");
+                        if(n!=0){
+	                        document.writeln("<div class=\"img1\"><a  href=\""+urlCam1Video+"\"><img src=\""+urlCam1Img+"\" alt=\""+nomCam1+"\" width=\"300\" height=\"200\"></a><div class=\"desc\">"+desc+"</div></div>"
+	                        );   
+                        }
+                        var n = nomCam3.localeCompare("%camera3Nom");
+                        if(n!=0){
+	                        document.writeln("<div class=\"img1\"><a  href=\""+urlCam1Video+"\"><img src=\""+urlCam1Img+"\" alt=\""+nomCam1+"\" width=\"300\" height=\"200\"></a><div class=\"desc\">"+desc+"</div></div>"
+	                        ); 
+                        }
+                        var n = nomCam4.localeCompare("%camera4Nom");
+                        if(n!=0){
+	                        document.writeln("<div class=\"img1\"><a  href=\""+urlCam1Video+"\"><img src=\""+urlCam1Img+"\" alt=\""+nomCam1+"\" width=\"300\" height=\"200\"></a><div class=\"desc\">"+desc+"</div></div>"
+	                        );  
+                        }
+                                                             
+                      </script>	                                              					
+					
 				</div>
+
+
 			</article>
 
-		<section id="footer">
+            <section id="footer">
 
-			<div class="copyright">
-				<ul class="menu">
-					<li>&copy; UPnP Camera Management Interface designed for OpenHab. All rights reserved.</li>
-				</ul>
-			</div>
-		</section>
-		<section >
-			<video src="https://www.youtube.com/watch?v=U4MHrrIQuis" autoplay>
-				<p>
-					<a href="https://www.youtube.com/watch?v=U4MHrrIQuis">téléchargez le vidéo</a>.</p>
-</video>
-<iframe width="420" height="315"
-src="https://youtu.be/U4MHrrIQuis">
-</iframe>
-<object width="460" height="265" data="https://youtu.be/U4MHrrIQuis" type="application/x-shockwave-flash">
-<param value="https://youtu.be/U4MHrrIQuis"></param>
-<param name="allowFullScreen" value="true"></param>
-<param value="always"></param>
-</object>
-		</section>
-
+            <div class="copyright">
+                <ul >
+                    <li>&copy; UPnP Camera Management Interface designed for OpenHab. All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
 	</body>
 </html>
