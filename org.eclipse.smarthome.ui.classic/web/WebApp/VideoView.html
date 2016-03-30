@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<!--
+	Based on HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Camera Management Interface</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="webview.css" />
+		<script>
+	    function $_GET(param) {
+		    var vars = {};
+		    window.location.href.replace( location.hash, '' ).replace(
+		        /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		        function( m, key, value ) { // callback
+		            vars[key] = value !== undefined ? value : '';
+		        }
+		    );
+		
+		    if ( param ) {
+		        return vars[param] ? vars[param] : null;
+		    }
+		    return vars;
+	    }
+	    var $_GET = $_GET();
+	    var nomCam=$_GET['cameraNom'];
+	    var urlCamVideo=$_GET['cameraVideo'];
+	    var urlCamPan_url=$_GET['camPan_url'];
+	    var urlCamTilt_url=$_GET['camTilt_url'];
+
+	    function httpGet()
+	    {      
+	        var xmlHttp = new XMLHttpRequest();
+	        xmlHttp.open( "GET", urlCamPan_url, false ); // false for synchronous request
+	        xmlHttp.send( null );
+	        return xmlHttp.responseText;
+	    }
+
+</script>
+
+	</head>
+	<body>
+
+		<!-- 1st step -->
+			<section id="banner">
+			<script>
+            document.writeln(
+            "<h1 class=\"titre\">"+nomCam+"</h1>"  
+            );
+            </script>
+            <script>
+            document.writeln(
+            "<iframe class=\"laVideo\" src="+urlCamVideo+" width=\"600px\" height=\"450px\" scrolling=\"no\"></iframe>"  
+            );
+            </script>
+            <div id="boutons" class="lesBoutons">
+
+            <script>
+            var n = urlCamPan_url.localeCompare("null");
+            if(n!=0){
+            document.writeln(
+            "<a  id=\"pan\" media=\"print\" target=\"_blank\" class=\"button style2 scrolly\" href="+urlCamPan_url+" download \">Pan</a>"  
+            );
+            }
+            </script>
+        
+            <script>
+            var n = urlCamTilt_url.localeCompare("null");
+            if(n!=0){
+            document.writeln(
+            "<a id=\"tilt\" class=\"button style2 scrolly\" href="+urlCamTilt_url+">Tilt</a>"  
+            );
+            }
+            </script>
+
+            </div>
+			</section>
+
+
+            <section id="footer">
+
+            <div class="copyright">
+                <ul >
+                    <li>&copy; UPnP Camera Management Interface designed for OpenHab. All rights reserved.</li>
+                </ul>
+            </div>
+        </section>
+	</body>
+</html>

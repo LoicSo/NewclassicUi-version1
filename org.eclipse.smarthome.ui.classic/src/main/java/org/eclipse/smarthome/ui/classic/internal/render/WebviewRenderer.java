@@ -70,7 +70,7 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
 
                 u.BuildUrls();
                 if (u.isRegistered()) {
-                    html.addCamera(temp.get("name"), u.getImageUrl(), u.getStreamUrl());
+                    html.addCamera(temp.get("name"), u.getImageUrl(), u.getStreamUrl(), u.getPanUrl(), u.getTiltUrl());
                     System.out.println("image_URL: " + u.getImageUrl() + "\n stream_url: " + u.getStreamUrl()
                             + "\n pan_url: " + u.getPanUrl() + "\n tilt_url: " + u.getTiltUrl());
                 }

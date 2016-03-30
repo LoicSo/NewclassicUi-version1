@@ -17,12 +17,14 @@ public class htmlBuilder {
         htmlPage = s;
     }
 
-    public void addCamera(String NomCam, String urlImage, String urlVideo) {
+    public void addCamera(String NomCam, String urlImage, String urlVideo, String pan_url, String tilt_url) {
         numCamera++;
         if (numCamera <= 4) {
             htmlPage = htmlPage.replaceFirst("%camera" + numCamera + "Nom", NomCam);
             htmlPage = htmlPage.replaceFirst("%camera" + numCamera + "Img", urlImage);
             htmlPage = htmlPage.replaceFirst("%camera" + numCamera + "Video", urlVideo);
+            htmlPage = htmlPage.replaceFirst("%camera" + numCamera + "Pan_url", pan_url);
+            htmlPage = htmlPage.replaceFirst("%camera" + numCamera + "Tilt_url", tilt_url);
 
         }
     }
