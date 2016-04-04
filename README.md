@@ -28,24 +28,24 @@ Once our binding upnpcamera is operating, you should see the discovered cameras 
 
 ##Step 1 : Verification of camera.properties file
 First, check if the name of your Upnp Camera is declared in the camera.properties :
--open the camera.properties
--if your camera is not already referenced in the file, add it following this convention :
+- open the camera.properties
+- if your camera is not already referenced in the file, add it following this convention :
 model|video_url|image_url|pan_url|tilt_url
 put null, if you don't know an information of it does not exist
 
 ##Step 2 : Add camera for the detection
 Go on Openhab :
--Chose paper ui
--Click on the tab Inbox on the left
--If the camera doesn't appear in the list, click above. If not, the camera is still recorded, go at the next step
+- Chose paper ui
+- Click on the tab Inbox on the left
+- If the camera doesn't appear in the list, click above. If not, the camera is still recorded, go at the next step
 
 ##Step 3 : Verification
--Go to configuration tab
--Go to things
--The list of all recorded camera appears. If your camera doesn't appear in the list, restart the procedure
--You can delete the camera from the inbox if you don't want it to appear on the interface.
+- Go to configuration tab
+- Go to things
+- The list of all recorded camera appears. If your camera doesn't appear in the list, restart the procedure
+- You can delete the camera from the inbox if you don't want it to appear on the interface.
 
 ##Step 4 : Camera visualization
-Go back on the home page of OpenHab
--Go to the classicUI
--Go to your webview and enjoy our nice interface
+- Go back on the home page of OpenHab
+- Go to the classicUI
+- Go to your webview and enjoy our nice interface
