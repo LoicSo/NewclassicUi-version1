@@ -1,5 +1,8 @@
 package org.eclipse.smarthome.ui.classic.rest.database;
 
+/*this class takes all the cameras in the properties file
+ * and put them into an arrayList in order to use them.
+ */
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +19,6 @@ public class CameraGetPropertyValues {
 
     public ArrayList<HashMap<String, String>> getPropValues() throws IOException {
 
-        // Multimap<String, String> myMultimap = ArrayListMultimap.create();
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 
         try {
@@ -32,27 +34,17 @@ public class CameraGetPropertyValues {
                 throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
             }
 
-            // get the property values
-
             Set<Object> keys = prop.keySet();
-
             Iterator<Object> i = keys.iterator();
 
-            String camera_name;
             String str;
-            String temp = "camera_";
             String[] strArray;
             HashMap<String, String> cameraInfo;
 
             while (i.hasNext()) {
 
                 str = (String) i.next();
-                // System.out.println(str);
-
-                // strArray = str.split("/");
-                // System.out.println(strArray.length);
                 cameraInfo = new HashMap<String, String>();
-
                 strArray = (prop.getProperty(str).split("\\|"));
                 cameraInfo.put("model", strArray[0]);
                 cameraInfo.put("video_url", strArray[1]);
@@ -64,7 +56,6 @@ public class CameraGetPropertyValues {
                     list.add(cameraInfo);
 
                 }
-                // camera_name = temp.concat(strArray[1]);
 
             }
 

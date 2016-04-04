@@ -1,4 +1,7 @@
 package org.eclipse.smarthome.ui.classic.rest.render;
+/*this class is used to get all the things that are D-Link Cameras and
+ * are saved by the user in the inbox of the paper UI.
+ */
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,10 +17,12 @@ import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.json.JsonValue;
 
-//import com.google.gson.*;
-
 public class RestRenderer {
-
+    /*
+     * this method gets the list of all the things in the inbox
+     * by making an http request to the rest server of smarthome
+     * it return a string corresponding to the JSON which is the response of the server
+     */
     // HTTP GET request
     public static String restResult() throws Exception {
 
@@ -46,6 +51,10 @@ public class RestRenderer {
 
     }
 
+    /*
+     * this method returns the list of all the cameras that was
+     * discovered by our binding, upnpcamera:camera
+     */
     public static ArrayList<HashMap<String, String>> parse() {
 
         String JSONData = null;
@@ -77,13 +86,6 @@ public class RestRenderer {
             JsonObject propertiesObject = each.getJsonObject("properties");
 
             if (UIDInfo.contains("upnpcamera:camera")) {
-
-                // System.out.println("properties : ");
-                // for (String key : propertiesObject.keySet()) {
-
-                // System.out.println(key + " " + propertiesObject.getString(key));
-
-                // }
                 cameraInfo = new HashMap<String, String>();
                 cameraInfo.put("ip", propertiesObject.getString("ip"));
                 cameraInfo.put("name", propertiesObject.getString("name"));

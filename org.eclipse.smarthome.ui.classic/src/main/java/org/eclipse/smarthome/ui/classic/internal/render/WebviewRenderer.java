@@ -7,6 +7,9 @@
  */
 package org.eclipse.smarthome.ui.classic.internal.render;
 
+/*camera dcs5222l 1.11
+ * camera dcs932l 1.06
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -54,9 +57,6 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
             height = 1;
         }
 
-        // snippet = StringUtils.replace(snippet, "%url%", webview.getUrl());
-        // snippet = StringUtils.replace(snippet, "%height%", Integer.toString(height * 36));
-
         try {
 
             ArrayList<HashMap<String, String>> list;
@@ -70,6 +70,7 @@ public class WebviewRenderer extends AbstractWidgetRenderer {
 
                 u.BuildUrls();
                 if (u.isRegistered()) {
+
                     html.addCamera(temp.get("name"), u.getImageUrl(), u.getStreamUrl(), u.getPanUrl(), u.getTiltUrl());
                     System.out.println("image_URL: " + u.getImageUrl() + "\n stream_url: " + u.getStreamUrl()
                             + "\n pan_url: " + u.getPanUrl() + "\n tilt_url: " + u.getTiltUrl());

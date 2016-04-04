@@ -31,7 +31,8 @@
 	    var urlCamVideo=$_GET['cameraVideo'];
 	    var urlCamPan_url=$_GET['camPan_url'];
 	    var urlCamTilt_url=$_GET['camTilt_url'];
-
+	    
+	    
 	    function httpGet()
 	    {      
 	        var xmlHttp = new XMLHttpRequest();
@@ -63,7 +64,7 @@
             var n = urlCamPan_url.localeCompare("null");
             if(n!=0){
             document.writeln(
-            "<a  id=\"pan\" media=\"print\" target=\"_blank\" class=\"button style2 scrolly\" href="+urlCamPan_url+" download \">Pan</a>"  
+            "<a  id=\"pan\"  target=\"_blank\" class=\"button style2 scrolly\" href="+urlCamPan_url+" download \">Pan</a>"  
             );
             }
             </script>
@@ -76,7 +77,6 @@
             );
             }
             </script>
-
             </div>
 			</section>
 

@@ -1,11 +1,15 @@
 package org.eclipse.smarthome.ui.classic.rest.render;
 
+/*this class aims to look for the discovered camera in
+ * some properties file, in order to look for the differents
+ * URL that correspond to the camera.
+ */
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import org.openhab.binding.upnpcamera.database.CameraGetPropertyValues;
+import org.eclipse.smarthome.ui.classic.rest.database.CameraGetPropertyValues;
 
 public class UrlBuilder {
 

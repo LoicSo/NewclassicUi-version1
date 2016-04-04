@@ -5,8 +5,7 @@
 	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/usr/openhab2-master/eclipse/javax.json-1.0.jar"/>
-	<classpathentry kind="lib" path="/usr/openhab2-master/eclipse/javax.json-api-1.0.jar"/>
 	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="lib" path="lib/javax.json-1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
