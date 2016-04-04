@@ -49,3 +49,7 @@ Go on Openhab :
 - Go back on the home page of OpenHab
 - Go to the classicUI
 - Go to your webview and enjoy our nice interface
+
+#ScreenShots
+
+[![Demo ClassicUI](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
