@@ -52,4 +52,4 @@ Go on Openhab :
 
 #ScreenShots
 
-[![Demo ClassicUI](https://gifs.com/gif/82Kj72)](https://www.youtube.com/watch?v=MuBX17ZaJgY&feature=youtu.be)
+[![Demo ClassicUI](https://j.gifs.com/82Kj72.gif)](https://www.youtube.com/watch?v=MuBX17ZaJgY&feature=youtu.be)
