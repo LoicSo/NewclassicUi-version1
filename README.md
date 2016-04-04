@@ -17,4 +17,9 @@ in your sitemap, put the webview tag
          Webview url="" height=10
         }
 
+The webview tag is modified to offer a nice interface for managing the discovered cameras, but the cameras have to be saved in the inbox before.
 
+#Saving the cameras in the inbox with PaperUI
+
+The paperUI was introduced by openHab2 to make configurations more easier for users. 
+One are binding upnpcamera is operating, you should see the discovered cameras by our 
