@@ -47,7 +47,7 @@ Go on Openhab :
 - You can delete the camera from the inbox if you don't want it to appear on the interface.
 
 ##Step 4 : Camera visualization
-- Go back on the home page of OpenHab
+- Go back to the home page of OpenHab
 - Go to the classicUI
 - Go to your webview and enjoy our nice interface
 
