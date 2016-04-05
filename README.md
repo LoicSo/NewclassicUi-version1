@@ -22,7 +22,8 @@ The webview tag is modified to offer a nice interface for managing the discovere
 #Saving the cameras in the inbox with PaperUI
 
 The paperUI was introduced by openHab2 to make configurations more easier for users. 
-Once our binding upnpcamera is operating, you should see the discovered cameras on the screen and add them into your inbox
+Once our binding upnpcamera is operating, you should see the discovered cameras on the screen and add them into your inbox.
+this is the link to our binding repository: https://github.com/openHab-UPnP/UpnpDiscovery.git 
 
 #Steps to follow:
 
